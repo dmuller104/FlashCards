@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Set</title>
+</head>
+
+<body>
+    <h1>Edit Set</h1>
+    
+    <a href="file1.html">Back to Home</a>
+
+    <h2 id="setName">Set Name</h2>
+
+    <ul id="cardsList">
+        <!-- Cards and their action buttons will be populated here -->
+    </ul>
+
+    <h3>Add New Card</h3>
+    <form id="newCardForm">
+        <input type="text" id="titleInput" placeholder="Title">
+        <input type="text" id="categoryInput" placeholder="Category">
+        <textarea id="contentInput" placeholder="Content"></textarea>
+        <button type="button" onclick="addCard()">Add Card</button>
+    </form>
+
+    <script src="file2.js"></script>
+</body>
+
+</html>

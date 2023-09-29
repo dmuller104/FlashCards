@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Settings</title>
+</head>
+<body>
+
+<h2>Select Quiz Settings for <span id="setName"></span></h2>
+
+<!-- Hint selection -->
+<div>
+    <h3>Choose your hint:</h3>
+    <label>
+        <input type="radio" name="hint" value="title" checked>
+        Title
+    </label>
+    <label>
+        <input type="radio" name="hint" value="category">
+        Category
+    </label>
+    <label>
+        <input type="radio" name="hint" value="content">
+        Content
+    </label>
+</div>
+
+<!-- Shuffle option -->
+<div>
+    <h3>Shuffle cards:</h3>
+    <label>
+        <input type="checkbox" id="shuffle" value="shuffle">
+        Enable Shuffle
+    </label>
+</div>
+
+<!-- Additional settings can be added as needed -->
+
+
+
+<button id="startQuiz">Start Quiz</button>
+
+<script src="file3.js"></script>
+
+</body>
+</html>

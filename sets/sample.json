@@ -1,0 +1,16 @@
+{
+    "id": 1,
+    "name": "Biology Terms",
+    "cards": [
+        {
+            "title": "Cell",
+            "category": "Basic Units",
+            "content": "The basic structural unit of an organism."
+        },
+        {
+            "title": "DNA",
+            "category": "Molecules",
+            "content": "The molecule that carries genetic instructions for the development, functioning, growth, and reproduction of all known organisms."
+        }
+    ]
+}
