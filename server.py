@@ -6,29 +6,29 @@ app = Flask(__name__, static_url_path='')
 
 @app.route('/', methods=['GET'])
 def index():
-    return send_from_directory('.', 'file1.html')
+    return send_from_directory('static', 'file1.html')
 
 @app.route('/sets', methods=['GET'])
 def sets():
-    sets_lst = [f for f in os.listdir('sets') if f.endswith('.json')]
+    sets_lst = [f for f in os.listdir('res/sets') if f.endswith('.json')]
     return jsonify({'length':len(sets_lst), 'sets':sets_lst})
 
 @app.route('/<filename>', methods=['GET'])
 def base_file(filename):
-    filepath = os.path.join('.', filename)
+    filepath = os.path.join('static', filename)
     if os.path.exists(filepath):# and os.path.isfile(filepath):
-        return send_from_directory('.', filename)
+        return send_from_directory('static', filename)
     else:
         return jsonify({'error': f'{filename} not found'}), 404
 
 @app.route('/sets/<filename>', methods=['GET', 'PUT', 'DELETE'])
 def set_file(filename):
-    filepath = os.path.join('sets', filename)
+    filepath = os.path.join('res/sets', filename)
 
     # Handle GET request
     if request.method == 'GET':
         if os.path.exists(filepath):
-            return send_from_directory('sets', filename)
+            return send_from_directory('res/sets', filename)
         else:
             return jsonify({'error': f'{filename} not found'}), 404
     
