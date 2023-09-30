@@ -22,7 +22,7 @@ function fetchSets() {
                         const editBtn = document.createElement("button");
                         editBtn.textContent = "Edit";
                         editBtn.onclick = () => {
-                            window.location.href = `/file2.html?set=${setName}`;
+                            window.location.href = `/edit.html?set=${setName}`;
                         };
                         li.appendChild(editBtn);
 
@@ -30,7 +30,7 @@ function fetchSets() {
                         const quizBtn = document.createElement("button");
                         quizBtn.textContent = "Quiz";
                         quizBtn.onclick = () => {
-                            window.location.href = `/file3.html?set=${setName}`;
+                            window.location.href = `/quiz-settings.html?set=${setName}`;
                         };
                         li.appendChild(quizBtn);
 

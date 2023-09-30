@@ -6,7 +6,7 @@ app = Flask(__name__, static_url_path='')
 
 @app.route('/', methods=['GET'])
 def index():
-    return send_from_directory('static', 'file1.html')
+    return send_from_directory('static', 'home.html')
 
 @app.route('/sets', methods=['GET'])
 def sets():
