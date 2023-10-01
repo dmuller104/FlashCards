@@ -16,28 +16,36 @@ function getQueryStringValue(key) {
 }
 
 function displayCard() {
-    // cur_card = card.data;
     if (cards.size > 0) {
         const card = cards.current.data;
         const hintType = getQueryStringValue('hint');
-        document.getElementById('hint-display').innerText = card[hintType];
-        document.getElementById('answer-display').style.display = 'none';
-        document.getElementById('answer-display').innerText = 
-        `
-        Title: ${card.title}
-        Category: ${card.category}
-        Content: ${card.content}
-        `;
-    }
-    else {
         
+        // Initially show only hint
+        document.getElementById('hint-display').innerText = card[hintType];
+        document.getElementById('category-display').style.display = 'none';
+        document.getElementById('content-display').style.display = 'none';
+    } else {
         document.getElementById('hint-display').innerText = "No more cards";
-        document.getElementById('answer-display').style.display = 'none';
+        document.getElementById('category-display').style.display = 'none';
+        document.getElementById('content-display').style.display = 'none';
     }
 }
 
 function revealAnswer() {
-    document.getElementById('answer-display').style.display = 'block';
+    if (cards.current == null) {
+        displayCard();
+        return;
+    }
+    const card = cards.current.data;
+    if (document.getElementById('content-display').style.display === 'none') {
+        document.getElementById('hint-display').innerText = card.title;
+        document.getElementById('category-display').style.display = 'block';
+        document.getElementById('category-display').innerText = card.category;
+        document.getElementById('content-display').style.display = 'block';
+        document.getElementById('content-display').innerText = card.content;
+    } else {
+        displayCard();
+    }
 }
 
 function nextCard() {

@@ -1,0 +1,63 @@
+:root {
+    --arrow-colors:#ff56fc;
+    --card-color:#90fbff;
+    --background-color:#333333;
+}
+
+body {
+    background-color:var(--background-color);
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#quiz-area {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+#quiz-area button {
+    margin-right: 10px;  /* Adjust this value as needed */
+    margin-left: 10px;  /* Adjust this value as needed */
+    width: 30px; /* Width of the arrow */
+    height: 30px; /* Height of the arrow */
+    background-color: transparent; /* Remove default button background */
+    border: none; /* Remove default button border */
+    position: relative;
+    cursor: pointer;
+}
+
+#quiz-area .previous::before {
+    content: '';
+    border-top: 20px solid transparent; 
+    border-bottom: 20px solid transparent;
+    border-right: 20px solid var(--arrow-colors); /* Arrow color */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the arrow */
+}
+#quiz-area .next::before {
+    content: '';
+    border-top: 20px solid transparent; 
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid var(--arrow-colors); /* Arrow color */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the arrow */
+}
+
+.card {
+    background-color: var(--card-color); /* Background color of the card */
+    border: 1px solid #ccc; /* Border color and thickness */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
+    padding: 20px; /* Padding inside the card */
+    width: 300px; /* Set the desired width */
+    margin: 20px auto; /* Center the card horizontally */
+    text-align: center; /* Align text to the left */
+}

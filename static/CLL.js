@@ -44,12 +44,16 @@ class CircledLinkedList {
     }
 
     next() {
-        this.current = this.current.next;
+        if (this.size > 0){
+            this.current = this.current.next;
+        }
         return this.current;
     }
     
     prev() {
-        this.current = this.current.prev;
+        if (this.size > 0){
+            this.current = this.current.prev;
+        }
         return this.current;
     }
 

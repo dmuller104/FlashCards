@@ -6,19 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
     <!-- You can link to any CSS styles you have here -->
+    <link rel="stylesheet" href="quiz.css">
 </head>
 <body>
-    <div id="card-display">
-        <h2 id="hint-display"></h2>
-        <button onclick="revealAnswer()">Reveal Answer</button>
-        <div id="answer-display" style="display: none;"></div>
+    <button id="reset-btn" onclick="resetCards()">Reset</button>
+
+    <div id="quiz-area">
+        <button class="arrow previous" onclick="previousCard()"></button>
+
+        <div id="card-display" class="card" onclick="revealAnswer()">
+            <h2 id="hint-display" class="title"></h2>
+            <h3 id="category-display" class="category" style="display: none;"></h3>
+            <div id="content-display" class="content" style="display: none;"></div>
+        </div>
+
+        <button class="arrow next" onclick="nextCard()"></button>
     </div>
     
-    <button onclick="previousCard()">Previous</button>
-    <button onclick="nextCard()">Next</button>
-    <button onclick="removeCard()">Remove</button>
-    <button onclick="resetCards()">Reset</button>
-    
+    <button id="remove-btn" onclick="removeCard()">Remove</button>
+
     <script src="CLL.js"></script>
     <script src="quiz.js"></script>
 </body>
